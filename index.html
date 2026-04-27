@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
   <title>3D Viewer</title>
 
   <style>
@@ -14,26 +16,11 @@
       overflow: hidden;
     }
 
-    <model-viewer
-  src="./model.glb"
-  camera-controls
-  auto-rotate
-  auto-rotate-delay="0"
-  rotation-per-second="8deg"
-
-  camera-orbit="0deg 75deg 7m"
-  camera-target="0m 1m 0m"
-
-  exposure="0.45"
-  shadow-intensity="0.6"
-
-  environment-image="legacy"
-  tone-mapping="aces"
-
-  field-of-view="50deg"
-  bounds="tight"
->
-</model-viewer>
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+    }
   </style>
 
 </head>
@@ -42,21 +29,21 @@
 
 <model-viewer
 src="./model.glb"
-
 camera-controls
 auto-rotate
 auto-rotate-delay="0"
-rotation-per-second="10deg"
+rotation-per-second="8deg"
 
 camera-orbit="0deg 75deg 7m"
 camera-target="0m 1m 0m"
 
-exposure="0.7"
-shadow-intensity="1"
-environment-image="neutral"
-tone-mapping="neutral"
+exposure="0.45"
+shadow-intensity="0.6"
 
-field-of-view="60deg"
+environment-image="legacy"
+tone-mapping="aces"
+
+field-of-view="50deg"
 bounds="tight"
 
 >
