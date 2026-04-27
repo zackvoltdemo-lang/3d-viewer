@@ -14,11 +14,26 @@
       overflow: hidden;
     }
 
-    model-viewer {
-      width: 100vw;
-      height: 100vh;
-      background: #000;
-    }
+    <model-viewer
+  src="./model.glb"
+  camera-controls
+  auto-rotate
+  auto-rotate-delay="0"
+  rotation-per-second="8deg"
+
+  camera-orbit="0deg 75deg 7m"
+  camera-target="0m 1m 0m"
+
+  exposure="0.45"
+  shadow-intensity="0.6"
+
+  environment-image="legacy"
+  tone-mapping="aces"
+
+  field-of-view="50deg"
+  bounds="tight"
+>
+</model-viewer>
   </style>
 
 </head>
