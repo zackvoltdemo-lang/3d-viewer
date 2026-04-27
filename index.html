@@ -3,51 +3,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <title>3D Viewer</title>
+
   <style>
-    body { margin: 0; background: #000; overflow: hidden; }
-    model-viewer { width: 100vw; height: 100vh; background: #000; }
-    #msg {
-      position: fixed; left: 20px; bottom: 20px;
-      color: white; font-family: Arial, sans-serif;
-      font-size: 14px; opacity: .8;
+    body {
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+      background: #000;
     }
   </style>
+
 </head>
+
 <body>
 
 <model-viewer
-id="viewer"
 src="./model.glb"
+
 camera-controls
 auto-rotate
-exposure="2"
+auto-rotate-delay="0"
+rotation-per-second="10deg"
+
+camera-orbit="0deg 75deg 7m"
+camera-target="0m 1m 0m"
+
+exposure="0.7"
 shadow-intensity="1"
-camera-orbit="0deg 75deg 10m"
-field-of-view="90deg"
+environment-image="neutral"
+tone-mapping="neutral"
+
+field-of-view="60deg"
 bounds="tight"
 
 >
 
 </model-viewer>
-
-<div id="msg">Loading 3D model...</div>
-
-<script>
-  const viewer = document.getElementById("viewer");
-  const msg = document.getElementById("msg");
-
-  viewer.addEventListener("load", () => {
-    msg.textContent = "Loaded — drag to rotate";
-    setTimeout(() => msg.style.display = "none", 3000);
-  });
-
-  viewer.addEventListener("error", () => {
-    msg.textContent = "Error loading model.glb";
-  });
-</script>
 
 </body>
 </html>
